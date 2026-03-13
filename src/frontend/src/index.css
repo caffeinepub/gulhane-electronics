@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/assets/fonts/Satoshi.woff2") format("woff2");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark theme — charcoal/near-black base with electric orange accent */
+    --background: 0.14 0.005 265;
+    --foreground: 0.94 0.01 90;
+
+    --card: 0.18 0.008 265;
+    --card-foreground: 0.94 0.01 90;
+
+    --popover: 0.18 0.008 265;
+    --popover-foreground: 0.94 0.01 90;
+
+    /* Electric orange primary */
+    --primary: 0.68 0.18 46;
+    --primary-foreground: 0.1 0.005 265;
+
+    /* Navy blue secondary */
+    --secondary: 0.28 0.06 260;
+    --secondary-foreground: 0.9 0.01 90;
+
+    --muted: 0.22 0.01 265;
+    --muted-foreground: 0.6 0.02 265;
+
+    --accent: 0.68 0.18 46;
+    --accent-foreground: 0.1 0.005 265;
+
+    --destructive: 0.55 0.2 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.28 0.02 265;
+    --input: 0.28 0.02 265;
+    --ring: 0.68 0.18 46;
+
+    --radius: 0.5rem;
+
+    --chart-1: 0.68 0.18 46;
+    --chart-2: 0.55 0.15 260;
+    --chart-3: 0.6 0.12 145;
+    --chart-4: 0.65 0.16 320;
+    --chart-5: 0.5 0.14 200;
+
+    --sidebar: 0.12 0.005 265;
+    --sidebar-foreground: 0.94 0.01 90;
+    --sidebar-primary: 0.68 0.18 46;
+    --sidebar-primary-foreground: 0.1 0.005 265;
+    --sidebar-accent: 0.22 0.01 265;
+    --sidebar-accent-foreground: 0.94 0.01 90;
+    --sidebar-border: 0.28 0.02 265;
+    --sidebar-ring: 0.68 0.18 46;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+/* Circuit board grid pattern */
+.circuit-bg {
+  background-image: linear-gradient(
+      oklch(0.68 0.18 46 / 0.04) 1px,
+      transparent 1px
+    ), linear-gradient(90deg, oklch(0.68 0.18 46 / 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Orange glow effect */
+.glow-orange {
+  box-shadow: 0 0 30px oklch(0.68 0.18 46 / 0.2);
+}
+
+/* Product card hover border */
+.product-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px oklch(0.68 0.18 46 / 0.15);
+  border-color: oklch(0.68 0.18 46 / 0.5);
+}
